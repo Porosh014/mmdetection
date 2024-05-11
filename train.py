@@ -1,6 +1,14 @@
+import subprocess
+import os
+original_directory = os.getcwd()
+subprocess.run(["pip", "install", "-e", "."])
+subprocess.run(["mim", "install", "mmcv==2.1.0"])
+os.chdir("/opt/ml/input/data/train")
+print("******************* DADADADADADADADADADADA ******************************************")
+subprocess.run(["ls", "-a"])
+os.chdir(original_directory)
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-import os
 import os.path as osp
 import json
 from mmengine.config import Config, DictAction
@@ -57,8 +65,9 @@ def parse_args():
     parser.add_argument("--current-host", type=str, default=os.environ["SM_CURRENT_HOST"])
     parser.add_argument("--model-dir", type=str, default=os.environ["SM_MODEL_DIR"])
     parser.add_argument("--data_dir", type=str, default=os.environ["SM_CHANNEL_TRAIN"])
-    
+
     args = parser.parse_args()
+
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
 
