@@ -3,10 +3,6 @@ import os
 original_directory = os.getcwd()
 subprocess.run(["pip", "install", "-e", "."])
 subprocess.run(["mim", "install", "mmcv==2.1.0"])
-os.chdir("/opt/ml/input/data/train")
-print("******************* DADADADADADADADADADADA ******************************************")
-subprocess.run(["ls", "-a"])
-os.chdir(original_directory)
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
 import os.path as osp
