@@ -1,3 +1,15 @@
--r requirements/build.txt
--r requirements/optional.txt
--r requirements/runtime.txt
+cython
+numpy
+torch==2.1.0
+scikit-learn
+matplotlib
+pycocotools
+scipy
+shapely
+six
+terminaltables
+tqdm
+torchvision
+openmim
+mmengine==0.10.4
+
